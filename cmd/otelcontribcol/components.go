@@ -3,6 +3,7 @@
 package main
 
 import (
+	elasticinframetricsprocessor "github.com/elastic/opentelemetry-collector-components/processor/elasticinframetricsprocessor"
 	"go.opentelemetry.io/collector/connector"
 	forwardconnector "go.opentelemetry.io/collector/connector/forwardconnector"
 	"go.opentelemetry.io/collector/exporter"
@@ -433,6 +434,7 @@ func components() (otelcol.Factories, error) {
 		tailsamplingprocessor.NewFactory(),
 		transformprocessor.NewFactory(),
 		remotetapprocessor.NewFactory(),
+		elasticinframetricsprocessor.NewFactory(),
 	)
 	if err != nil {
 		return otelcol.Factories{}, err

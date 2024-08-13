@@ -2,11 +2,12 @@
 
 module github.com/open-telemetry/opentelemetry-collector-contrib/cmd/otelcontribcol
 
-go 1.21.0
+go 1.21.1
 
-toolchain go1.21.12
+toolchain go1.22.4
 
 require (
+	github.com/elastic/opentelemetry-collector-components/processor/elasticinframetricsprocessor v0.7.1
 	github.com/open-telemetry/opentelemetry-collector-contrib/confmap/provider/s3provider v0.104.1-0.20240705135726-e014c1ed756c
 	github.com/open-telemetry/opentelemetry-collector-contrib/confmap/provider/secretsmanagerprovider v0.104.1-0.20240705135726-e014c1ed756c
 	github.com/open-telemetry/opentelemetry-collector-contrib/connector/countconnector v0.104.0
@@ -457,6 +458,7 @@ require (
 	github.com/elastic/go-structform v0.0.10 // indirect
 	github.com/elastic/go-sysinfo v1.7.1 // indirect
 	github.com/elastic/go-windows v1.0.1 // indirect
+	github.com/elastic/opentelemetry-lib v0.7.3 // indirect
 	github.com/emicklei/go-restful/v3 v3.11.0 // indirect
 	github.com/envoyproxy/go-control-plane v0.12.0 // indirect
 	github.com/envoyproxy/protoc-gen-validate v1.0.4 // indirect
@@ -483,7 +485,7 @@ require (
 	github.com/go-openapi/swag v0.22.9 // indirect
 	github.com/go-resty/resty/v2 v2.13.1 // indirect
 	github.com/go-sql-driver/mysql v1.8.1 // indirect
-	github.com/go-viper/mapstructure/v2 v2.0.0-alpha.1 // indirect
+	github.com/go-viper/mapstructure/v2 v2.0.0 // indirect
 	github.com/go-zookeeper/zk v1.0.3 // indirect
 	github.com/gobwas/glob v0.2.3 // indirect
 	github.com/goccy/go-json v0.10.3 // indirect
