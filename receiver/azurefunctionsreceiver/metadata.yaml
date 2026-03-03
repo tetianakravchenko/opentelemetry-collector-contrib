@@ -1,0 +1,8 @@
+type: azurefunctions
+
+status:
+  class: receiver
+  stability:
+    development: [logs]
+  codeowners:
+    active: [jmacd, MichaelKatsoulis, constanca-m]

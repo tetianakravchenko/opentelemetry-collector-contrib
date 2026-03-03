@@ -240,6 +240,7 @@ components:
     - receiver/awsxray
     - receiver/azure_event_hub
     - receiver/azureblob
+    - receiver/azurefunctions
     - receiver/azuremonitor
     - receiver/carbon
     - receiver/chrony

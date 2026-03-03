@@ -1,0 +1,6 @@
+azurefunctions:
+  http:
+    endpoint: test:123
+  auth: azureauth
+  logs:
+    encoding: azureresourcelogs_encoding
