@@ -15,7 +15,7 @@ type Config struct {
 	// Logs defines configuration for log records received from Azure Functions.
 	Logs EncodingConfig `mapstructure:"logs"`
 
-	// Auth is the component.ID of the extension that provides Azure authentication (e.g. token credential).
+	// Auth is the component.ID of the extension that provides Azure authentication
 	Auth component.ID `mapstructure:"auth"`
 
 	// IncludeInvokeMetadata, when true, adds Azure Functions invoke metadata to resource attributes.
@@ -29,9 +29,7 @@ type EncodingConfig struct {
 	_        struct{}     // Prevent unkeyed literal initialization
 }
 
-var _ component.Config = (*Config)(nil)
-
 // Validate checks if the receiver configuration is valid.
-func (cfg *Config) Validate() error {
+func (_ *Config) Validate() error {
 	return nil
 }
