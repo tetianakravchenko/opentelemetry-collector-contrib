@@ -51,7 +51,7 @@ receivers:
     logs:
       # Encoding extension ID for log unmarshaling
       # Must reference an encoding extension defined in the extensions section
-      encoding: azureresourcelogs_encoding
+      encoding: azure_encoding
 
     # Include Azure Functions invoke metadata in resource attributes
     # When enabled, adds partition context and system metadata
@@ -60,11 +60,11 @@ receivers:
 extensions:
   azureauth:
     # Azure auth extension configuration
-  azureresourcelogs_encoding:
+  azure_encoding:
     # Encoding extension configuration
 
 service:
-  extensions: [azureauth, azureresourcelogs_encoding]
+  extensions: [azureauth, azure_encoding]
   pipelines:
     logs:
       receivers: [azurefunctions]
@@ -73,7 +73,7 @@ service:
 
 ## Supported Signal Decoders
 
-- **Logs** (Primary support) - Logs are decoded using an encoding extension (typically `azureresourcelogs_encoding`) that converts Azure Resource Logs format to OpenTelemetry logs.
+- **Logs** (Primary support) - Logs are decoded using an encoding extension (typically `azure_encoding`) that converts Azure Resource Logs format to OpenTelemetry logs.
 - **Metrics** (Future consideration)
 
 ## Requirements
