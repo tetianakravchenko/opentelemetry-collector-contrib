@@ -3,18 +3,18 @@ azurefunctions:
     endpoint: test:123
   auth: azureauth
   logs:
-    encoding: azureresourcelogs_encoding
+    encoding: azure_encoding
 
 azurefunctions/no_auth:
   http:
     endpoint: test:123
   logs:
-    encoding: azureresourcelogs_encoding
+    encoding: azure_encoding
 
 azurefunctions/no_http:
   auth: azureauth
   logs:
-    encoding: azureresourcelogs_encoding
+    encoding: azure_encoding
 
 azurefunctions/missing_logs_encoding:
   auth: azureauth

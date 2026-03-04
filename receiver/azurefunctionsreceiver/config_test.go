@@ -34,12 +34,15 @@ func TestLoadConfig(t *testing.T) {
 			expected: &Config{
 				HTTP: &confighttp.ServerConfig{NetAddr: confignet.AddrConfig{Endpoint: "test:123", Transport: confignet.TransportTypeTCP}},
 				Auth: component.MustNewID("azureauth"),
-				Logs: EncodingConfig{Encoding: component.MustNewID("azureresourcelogs_encoding")},
+				Logs: EncodingConfig{Encoding: component.MustNewID("azure_encoding")},
 			},
 		},
 		{
-			id:                 component.NewIDWithName(metadata.Type, "no_auth"),
-			expectedErrMessage: "auth must be set",
+			id: component.NewIDWithName(metadata.Type, "no_auth"),
+			expected: &Config{
+				HTTP: &confighttp.ServerConfig{NetAddr: confignet.AddrConfig{Endpoint: "test:123", Transport: confignet.TransportTypeTCP}},
+				Logs: EncodingConfig{Encoding: component.MustNewID("azure_encoding")},
+			},
 		},
 		{
 			id:                 component.NewIDWithName(metadata.Type, "no_http"),

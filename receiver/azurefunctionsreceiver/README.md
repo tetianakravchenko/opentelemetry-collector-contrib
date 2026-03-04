@@ -32,7 +32,7 @@ The following receiver configuration parameters are supported.
 | Name | Type | Description |
 |------|------|-------------|
 | `http` | confighttp.ServerConfig | **Required.** HTTP server settings (e.g. `endpoint: :9090`). Typically use `FUNCTIONS_CUSTOMHANDLER_PORT`. |
-| `auth` | component.ID | **Required.** Component ID of the extension that provides Azure authentication (e.g. token credential). |
+| `auth` | component.ID | Optional. Component ID of the extension that provides Azure authentication (e.g. token credential). |
 | `logs.encoding` | component.ID | **Required.** Encoding extension ID for unmarshaling log records. |
 | `include_invoke_metadata` | bool | Optional. When true, add Azure Functions invoke metadata to resource attributes. Default: false. |
 

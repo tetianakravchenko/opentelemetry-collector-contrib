@@ -38,10 +38,6 @@ func (cfg *Config) Validate() error {
 		errs = append(errs, errors.New("missing http server settings"))
 	}
 
-	if cfg.Auth == (component.ID{}) {
-		errs = append(errs, errors.New("auth must be set"))
-	}
-
 	if cfg.Logs.Encoding == (component.ID{}) {
 		errs = append(errs, errors.New("logs.encoding must be set"))
 	}
