@@ -13,14 +13,14 @@ import (
 
 type functionsReceiver struct{}
 
-func newFunctionsReceiver(_ *Config, _ receiver.Settings, _ consumer.Logs) *functionsReceiver {
+func newFunctionsReceiver(_ *Config, _ receiver.Settings, _ consumer.Logs) receiver.Logs {
 	return &functionsReceiver{}
 }
 
-func (_ *functionsReceiver) Start(_ context.Context, _ component.Host) error {
+func (*functionsReceiver) Start(_ context.Context, _ component.Host) error {
 	return nil
 }
 
-func (_ *functionsReceiver) Shutdown(_ context.Context) error {
+func (*functionsReceiver) Shutdown(_ context.Context) error {
 	return nil
 }

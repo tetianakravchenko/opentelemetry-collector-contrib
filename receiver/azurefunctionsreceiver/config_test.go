@@ -37,6 +37,18 @@ func TestLoadConfig(t *testing.T) {
 				Logs: EncodingConfig{Encoding: component.MustNewID("azureresourcelogs_encoding")},
 			},
 		},
+		{
+			id:                 component.NewIDWithName(metadata.Type, "no_auth"),
+			expectedErrMessage: "auth must be set",
+		},
+		{
+			id:                 component.NewIDWithName(metadata.Type, "no_http"),
+			expectedErrMessage: "missing http server settings",
+		},
+		{
+			id:                 component.NewIDWithName(metadata.Type, "missing_logs_encoding"),
+			expectedErrMessage: "logs.encoding must be set",
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.id.String(), func(t *testing.T) {

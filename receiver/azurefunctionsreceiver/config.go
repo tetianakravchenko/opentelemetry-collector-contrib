@@ -4,6 +4,8 @@
 package azurefunctionsreceiver // import "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/azurefunctionsreceiver"
 
 import (
+	"errors"
+
 	"go.opentelemetry.io/collector/component"
 	"go.opentelemetry.io/collector/config/confighttp"
 )
@@ -30,6 +32,19 @@ type EncodingConfig struct {
 }
 
 // Validate checks if the receiver configuration is valid.
-func (_ *Config) Validate() error {
-	return nil
+func (cfg *Config) Validate() error {
+	var errs []error
+	if cfg.HTTP == nil || cfg.HTTP.NetAddr.Endpoint == "" {
+		errs = append(errs, errors.New("missing http server settings"))
+	}
+
+	if cfg.Auth == (component.ID{}) {
+		errs = append(errs, errors.New("auth must be set"))
+	}
+
+	if cfg.Logs.Encoding == (component.ID{}) {
+		errs = append(errs, errors.New("logs.encoding must be set"))
+	}
+
+	return errors.Join(errs...)
 }
