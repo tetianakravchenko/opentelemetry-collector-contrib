@@ -1,4 +1,5 @@
-type: azurefunctions
+display_name: Azure Functions Receiver
+type: azure_functions
 
 status:
   class: receiver

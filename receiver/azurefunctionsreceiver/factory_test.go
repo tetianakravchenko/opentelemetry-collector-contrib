@@ -19,7 +19,7 @@ func TestCreateLogsReceiver(t *testing.T) {
 	cfg := f.CreateDefaultConfig().(*Config)
 
 	settings := receivertest.NewNopSettings(receivertest.NopType)
-	settings.ID = component.MustNewID("azurefunctions")
+	settings.ID = component.MustNewID("azure_functions")
 	ext, err := f.CreateLogs(t.Context(), settings, cfg, consumertest.NewNop())
 	require.NoError(t, err)
 	assert.NotNil(t, ext)

@@ -7,7 +7,7 @@ import (
 )
 
 var (
-	Type      = component.MustNewType("azurefunctions")
+	Type      = component.MustNewType("azure_functions")
 	ScopeName = "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/azurefunctionsreceiver"
 )
 
